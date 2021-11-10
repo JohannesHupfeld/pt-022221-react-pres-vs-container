@@ -1,18 +1,15 @@
 export default function PeopleContainer(props) {
-  // state = {
-  //   people: []
-  // }
+  console.log(props)
 
-  // componentDidMount(){
-  //   fetch("https://swapi.dev/api/people")
-  //   .then(r => r.json())
-  //   .then(data => this.setState({
-  //     people: data.results
-  //   }))
-  // }
+  function handleClick(){
+    // fetch
+    // re-route
+    props.routerInfo.history.push("/")
+  }
 
   return (
     <div>
+      <button onClick={handleClick}>Submit</button>
       <h1>All People</h1>
       <ul>
         {props.people.map(p => <li>{p.name}</li>)}
