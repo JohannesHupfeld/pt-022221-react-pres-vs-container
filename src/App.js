@@ -31,9 +31,12 @@ export default class App extends React.Component {
   fetchSWAPI(arg){
     fetch(`https://swapi.dev/api/${arg}`)
     .then(r => r.json())
-    .then(({results}) => this.setState({
+    .then(({results}) => this.setState({ // destructured
       [arg]: results
     }))
+    //.then(data => this.setState({
+    //  [arg]: data.resulkts
+    // }))
   }
 
   render() {

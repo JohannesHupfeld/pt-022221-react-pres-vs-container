@@ -16,7 +16,8 @@ export default function PlanetsContainer(props) {
       <div>
         <h1>All Planets</h1>
         <ul>
-          {props.planets.map(p => <li>{p.name}</li>)}
+          {/* {this.state.planets.map(p => <li>{p.name}</li>)} */}
+          {props.planets.map(p => <li>{p.name}</li>)} 
         </ul>
       </div>
     )

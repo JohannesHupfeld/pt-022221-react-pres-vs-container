@@ -19,7 +19,7 @@ export default function Pages({page, starships, people, planets}) {
         return <PlanetsContainer planets={planets} />;
     
       default:
-        break;
+        break; // could be an about or a 
     }
   }
 

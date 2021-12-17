@@ -15,6 +15,7 @@ export default function PeopleContainer(props) {
     <div>
       <h1>All People</h1>
       <ul>
+        {/* {this.state.people.map(p => <li>{p.name}</li>)} */}
         {props.people.map(p => <li>{p.name}</li>)}
       </ul>
     </div>
