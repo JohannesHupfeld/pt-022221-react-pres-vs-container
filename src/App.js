@@ -2,11 +2,16 @@ import React from 'react'
 import './App.css';
 import NavBar from './components/presentational/NavBar';
 import Pages from './components/Pages';
+import {
+  BrowserRouter as Router,
+  // Link,
+  // Route
+} from 'react-router-dom'
 
-export default class App extends React.Component {
+ export default class App extends React.Component {
   // state which page I'm on
   state = {
-    page: "starships",
+    //  page: "starships",
     planets: [],
     starships: [],
     people: []
@@ -24,9 +29,9 @@ export default class App extends React.Component {
     this.fetchSWAPI("planets")
   }
 
-  componentDidUpdate(){
-    console.log(this.state)
-  }
+  // componentDidUpdate(){
+  //   console.log(this.state)
+  // }
 
   fetchSWAPI(arg){
     fetch(`https://swapi.dev/api/${arg}`)
@@ -41,15 +46,28 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <NavBar changePage={this.changePage} />
-        <Pages 
-          page={this.state.page} 
-          people={this.state.people} 
-          starships={this.state.starships}
-          planets={this.state.planets}
-        />
-      </div>
+      // router has to be the top most component if we are using any of its functionality  
+      <Router>
+        <div className="App">
+          <NavBar changePage={this.changePage} />
+          {/* <Link to="/home">Home</Link><br></br>
+          <Link to="/about">About</Link>
+          
+          <Route path="/home">
+            <p>Home</p>
+          </Route>
+          <Route path="/about">
+            <p>About</p>
+          </Route> */}
+
+          <Pages 
+            // page={this.state.page} 
+            people={this.state.people} 
+            starships={this.state.starships}
+            planets={this.state.planets}
+          />
+        </div>
+      </Router>
     );
   }
 };
